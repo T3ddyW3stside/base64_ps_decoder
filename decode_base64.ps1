@@ -1,10 +1,10 @@
 #decode base64 file
 
-$base64File = "C:\Users\mbr\Desktop\datei_base64.txt"  # Pfad zur Textdatei mit Base64-Inhalt
-$outputExe = "C:\Users\mbr\Desktop\MyTor.exe"  # Pfad für die wiederhergestellte .exe-Datei
+$base64File = "C:\Users\mbr\Desktop\datei_base64.txt"  # Path to file
+$outputExe = "C:\Users\mbr\Desktop\MyTor.exe"  # path for save output
 
-# Lies den Base64-Text und konvertiere ihn in die ursprüngliche .exe-Datei zurück
+# convert logic
 $base64 = Get-Content $base64File -Raw
 [IO.File]::WriteAllBytes($outputExe, [Convert]::FromBase64String($base64))
 
-Write-Host "Datei erfolgreich wiederhergestellt: $outputExe"
+Write-Host "Restored output: $outputExe"
